@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head><title>Date and Time Input</title>
+</h:head>
+<h:body>
+<h1 class="ui-widget-header ui-corner-all" align="center">
+Date and Time Input</h1>
+<!-- This page modeled closely after  http://www.primefaces.org/showcase/ui/calendarTime.jsf -->
+<br/>
+<p:fieldset legend="Date and Time (24-hour format)">
+<h:form>
+<h:panelGrid columns="2">
+   <p:calendar value="#{dateBean2.sampleDate}" pattern="MM/dd/yyyy HH:mm">
+      <p:ajax event="dateSelect" update="selection"/>
+   </p:calendar>
+   <h:outputText value="#{dateBean2.sampleTime}" id="selection"/>
+</h:panelGrid>
+</h:form>
+</p:fieldset>
+<br/>
+<p:fieldset legend="Date and Time (12-hour am/pm format)">
+<h:form>
+<h:panelGrid columns="2">
+   <p:calendar value="#{dateBean2.sampleDate}" pattern="MM/dd/yyyy hh:mm a">
+      <p:ajax event="dateSelect" update="selection"/>
+   </p:calendar>
+   <h:outputText value="#{dateBean2.sampleTime}" id="selection"/>
+</h:panelGrid>
+</h:form>
+</p:fieldset>
+<br/>
+<p:fieldset legend="Time Only (Date defaults to Jan 1 1970)">
+<h:form>
+<h:panelGrid columns="2">
+   <p:calendar value="#{dateBean2.sampleDate}" pattern="HH:mm" timeOnly="true">
+      <p:ajax event="dateSelect" update="selection"/>
+   </p:calendar>
+   <h:outputText value="#{dateBean2.sampleTime}" id="selection"/>
+</h:panelGrid>
+</h:form>
+</p:fieldset>
+<br/>
+<p:fieldset legend="Date and Time with Seconds">
+<h:form>
+<h:panelGrid columns="2">
+   <p:calendar value="#{dateBean2.sampleDate}" pattern="MM/dd/yyyy HH:mm:ss">
+      <p:ajax event="dateSelect" update="selection"/>
+   </p:calendar>
+   <h:outputText value="#{dateBean2.sampleTime}" id="selection"/>
+</h:panelGrid>
+</h:form>
+</p:fieldset>
+<br/>
+<p:fieldset legend="Date and Time with Seconds and Slider Step Size">
+<h:form>
+<h:panelGrid columns="2">
+   <p:calendar value="#{dateBean2.sampleDate}" pattern="MM/dd/yyyy HH:mm:ss"  
+               stepHour="2" stepMinute="10" stepSecond="10">
+      <p:ajax event="dateSelect" update="selection"/>
+   </p:calendar>
+   <h:outputText value="#{dateBean2.sampleTime}" id="selection"/>
+</h:panelGrid>
+</h:form>
+</p:fieldset>
+<br/>
+<p:fieldset legend="Date and Time with Min and Max Settings">
+<h:form>
+<h:panelGrid columns="2">
+   <p:calendar value="#{dateBean2.sampleDate}" pattern="MM/dd/yyyy HH:mm"  
+               minHour="9" maxHour="18">
+      <p:ajax event="dateSelect" update="selection"/>
+   </p:calendar>
+   <h:outputText value="#{dateBean2.sampleTime}" id="selection"/>
+</h:panelGrid>
+</h:form>
+</p:fieldset>
+
+<!-- Blank lines at bottom so calendar will hang down below textfield instead of above it. -->
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</h:body></html>

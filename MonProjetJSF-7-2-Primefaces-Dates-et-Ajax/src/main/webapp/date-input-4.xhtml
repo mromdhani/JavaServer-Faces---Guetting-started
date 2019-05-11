@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head><title>Date Input: Options for Appearance</title>
+</h:head>
+<h:body>
+<h1 class="ui-widget-header ui-corner-all" align="center">
+Date Input: Options for Appearance</h1>
+<br/>
+<p:fieldset legend="Button Panel inside Calendar">
+<h:form>
+<h:panelGrid columns="2">
+   <p:calendar value="#{dateBean2.sampleDate}" showButtonPanel="true">
+      <p:ajax event="dateSelect" update="selection"/>
+   </p:calendar>
+   <h:outputText value="#{dateBean2.sampleDay}" id="selection"/>
+</h:panelGrid>
+</h:form>
+</p:fieldset>
+<br/>
+<p:fieldset legend="Button for Invoking Calendar">
+<h:form>
+<h:panelGrid columns="2">
+   <p:calendar value="#{dateBean2.sampleDate}" showOn="both">
+      <p:ajax event="dateSelect" update="selection"/>
+   </p:calendar>
+   <h:outputText value="#{dateBean2.sampleDay}" id="selection"/>
+</h:panelGrid>
+</h:form>
+</p:fieldset>
+<br/>
+<p:fieldset legend="Month/Year Navigator">
+<h:form>
+<h:panelGrid columns="2">
+   <p:calendar value="#{dateBean2.sampleDate}" navigator="true">
+      <p:ajax event="dateSelect" update="selection"/>
+   </p:calendar>
+   <h:outputText value="#{dateBean2.sampleDay}" id="selection"/>
+</h:panelGrid>
+</h:form>
+</p:fieldset>
+<br/>
+<p:fieldset legend="Two-Month Display">
+<h:form>
+<h:panelGrid columns="2">
+   <p:calendar value="#{dateBean2.sampleDate}" pages="2">
+      <p:ajax event="dateSelect" update="selection"/>
+   </p:calendar>
+   <h:outputText value="#{dateBean2.sampleDay}" id="selection"/>
+</h:panelGrid>
+</h:form>
+</p:fieldset>
+</h:body></html>

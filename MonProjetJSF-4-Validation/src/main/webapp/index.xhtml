@@ -1,0 +1,36 @@
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Facelet Title</title>
+</h:head>
+<h:body>
+	<h2>Formulaire de saisie / Validation</h2>
+	<h:form>
+
+		<h:panelGrid  columns="3"  >
+			<h:outputText value="Votre nom"></h:outputText>
+			<h:inputText id="nom" value="#{personne.nom}" required="true" requiredMessage="Le nom est obligatoire"></h:inputText>
+			<h:message for="nom" style="color:red"></h:message>
+		    
+		    <h:outputText value="Votre age"></h:outputText>
+			<h:inputText id="age" value="#{personne.age}" validatorMessage="L'age doit etre entre 0 et 150" >
+			   <f:validateLongRange minimum="1" maximum="150"  />
+			</h:inputText>
+			<h:message for="age" style="color:red"></h:message>
+			
+			  <h:outputText value="Votre email"></h:outputText>
+			<h:inputText id="email" value="#{personne.email}" required="true" requiredMessage="Le email est obligatoire" >
+			  <f:validator validatorId="emailValidator" />
+			</h:inputText>
+			<h:message for="email" style="color:red"></h:message>
+		</h:panelGrid>
+		<h:commandButton value="Mineur/Majeur ?" action="#{personne.estMajeur()}"></h:commandButton>
+	</h:form>
+</h:body>
+</html>
+
+

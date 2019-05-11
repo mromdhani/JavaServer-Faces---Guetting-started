@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>PrimeFaces Test</title>
+</h:head>
+<h:body>
+
+	<h2>Exemple de formulaire simple</h2>
+	<h:form id="form">
+		<p:panel id="panel" header="Données personnelles"
+			style="margin-bottom:10px;">
+			<p:messages id="messages" />
+			<h:panelGrid columns="3">
+				<h:outputLabel for="inputname" value="Name: *" />
+				<p:inputText id="inputname" value="" required="true" label="Name">
+					<f:validateLength minimum="2" />
+				</p:inputText>
+				<p:message for="inputname" />
+				<h:outputLabel for="adresse" value="Adresse" />
+				<p:inputTextarea id="adresse" value="" label="Adresse">
+				</p:inputTextarea>
+				<p:message for="adresse" />
+				<h:outputLabel for="birthDate" value="Date naissance" />
+				<p:calendar id="birthdate" mode="popup" showOn="button" />
+				<p:message for="birthdate" />
+			</h:panelGrid>
+		</p:panel>
+		<p:commandButton value="Submit" id="ajax"
+			styleClass="ui-priority-primary" />
+
+	</h:form>
+
+
+</h:body>
+
+</html>

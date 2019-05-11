@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head><title>Date Input</title>
+</h:head>
+<h:body>
+<h1 class="ui-widget-header ui-corner-all" align="center">Date Input</h1>
+<br/>
+<p:fieldset legend="Inline Calendar">
+<h:form>
+   <h2>Register for the JSF Resort</h2>
+   <p:messages/>
+   <b>Start date:</b> 
+   <p:calendar value="#{dateBean.startDate}"
+               mode="inline"
+               required="true"
+               requiredMessage="Start date required"/><br/>
+   <b>End date:</b> 
+   <p:calendar value="#{dateBean.endDate}"
+               mode="inline"
+               required="true"
+               requiredMessage="End date required"/><br/>
+   <p:commandButton action="#{dateBean.register}" 
+                    value="Register" ajax="false"/><br/>
+</h:form>
+</p:fieldset>
+</h:body></html>

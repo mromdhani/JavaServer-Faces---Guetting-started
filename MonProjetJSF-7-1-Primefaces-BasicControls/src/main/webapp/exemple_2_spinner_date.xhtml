@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>PrimeFaces Test</title>
+</h:head>
+<h:body>
+
+	<p:fieldset legend="Spinner &amp; Calendar (No Server Behavior)">  <!-- p:fieldset is not required, but is good because it gives legend that uses current PrimeFaces theme -->
+<p>
+This example just verifies that PrimeFaces is installed properly. The first 
+entry should look like a number spinner, and the second should look
+like a textfield. If you see this, and if a calendar pops up when you click in 
+the second the field, then you correctly included the PrimeFaces JAR file and correctly
+added the PrimeFaces declaration to the &lt;html...&gt; start tag.
+</p>
+<h:form>
+   <b>Choose number:</b> <p:spinner/><br/>
+   <b>Choose date:</b> <p:calendar/>
+</h:form>
+</p:fieldset>
+<br/>
+</h:body>
+
+</html>

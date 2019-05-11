@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head><title>Date Input</title>
+</h:head>
+<h:body>
+<h1 class="ui-widget-header ui-corner-all" align="center">Date Input</h1>
+<br/>
+<p:fieldset legend="Basic Popup Calendar with Validation">
+<h:form>
+   <h2>Register for the JSF Resort</h2>
+   <p:messages/>
+   <!--  Note that validatorMessage not needed because the UI
+         will not let you enter an illegal date. -->
+   <b>Start date:</b> 
+   <p:calendar value="#{dateBean.startDate}"
+               required="true"
+               requiredMessage="Start date required"/><br/>
+   <b>End date:</b> 
+   <p:calendar value="#{dateBean.endDate}"
+               required="true"
+               requiredMessage="End date required"/><br/>
+   <p:commandButton action="#{dateBean.register}" ajax="false" value="Register"/><p/>
+</h:form>
+</p:fieldset>
+</h:body></html>

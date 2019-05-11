@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head><title>Date Input</title>
+</h:head>
+<h:body>
+<h1 class="ui-widget-header ui-corner-all" align="center">
+Date Input: Animation Effects</h1>
+<br/>
+<ui:repeat var="effect" value="#{effectsBean.availableEffects}">
+<p:fieldset legend="#{effect}">
+<h:form>
+<h:panelGrid columns="2">
+   <p:calendar value="#{dateBean2.sampleDate}" effect="#{effect}">
+      <p:ajax event="dateSelect" update="selection"/>
+   </p:calendar>
+   <h:outputText value="#{dateBean2.sampleDay}" id="selection"/>
+</h:panelGrid>
+</h:form>
+</p:fieldset>
+<br/>
+</ui:repeat>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</h:body></html>

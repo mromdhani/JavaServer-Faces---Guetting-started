@@ -1,0 +1,24 @@
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Facelet Title</title>
+</h:head>
+<h:body>
+	<h3>Formulaire de saisie / Navigation XML dans faces-config.xml</h3>
+	<h:form>
+		<h:panelGrid border="1" columns="2" style="width: 470px; ">
+			<h:outputText value="Votre nom"></h:outputText>
+			<h:inputText value="#{personne.nom}"></h:inputText>
+		<h:outputText value="Votre age"></h:outputText>
+			<h:inputText value="#{personne.age}"></h:inputText>
+		</h:panelGrid>
+		<h:commandButton value="Mineur/Majeur ?" action="#{personne.estMajeur}"></h:commandButton>
+	</h:form>
+</h:body>
+</html>
+
+

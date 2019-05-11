@@ -1,0 +1,21 @@
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Facelet Title</title>
+</h:head>
+<h:body>
+	<h2>Résultat de la navigation</h2>
+     <h3> Vous êtes <span style="color:green;">Majeur</span></h3>
+    
+      Vous êtes Monsieur/Madame 
+      <h:outputText value="#{personne.nom}" style="color:green;"></h:outputText>
+       qui est agé de 
+       <h:outputText value="#{personne.age}" style="color:green;"></h:outputText> années
+</h:body>
+</html>
+
+
