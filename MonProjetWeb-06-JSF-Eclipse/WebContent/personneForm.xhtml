@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<body>
+	<div
+		style="width: 100%; font-size: 36px; line-height: 48px; background-color: navy; color: white">
+		Formulaire de saisie Personne</div>
+	<h:form>
+		<h:panelGrid border="1" columns="2" style="width: 375px; ">
+			<h:outputText value="Votre nom"></h:outputText>
+			<h:inputText value="#{personne.nom}"></h:inputText>
+			<h:outputText value="Votre age"></h:outputText>
+			<h:inputText value="#{personne.age}"></h:inputText>
+		</h:panelGrid>
+		<h:commandButton value="Jeune ou Adulte ?"
+			action="#{personne.eventHandler()}">
+		</h:commandButton>
+	</h:form>
+</body>
+</html>
